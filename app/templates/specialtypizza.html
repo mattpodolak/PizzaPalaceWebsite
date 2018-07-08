@@ -1,0 +1,2304 @@
+<?php
+	session_start();
+	require('connection.php');
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Palace - Specialty Pizza</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/intext.css">
+    <link rel="stylesheet" href="assets/css/pizzafooter.css">
+    <link rel="stylesheet" href="assets/css/pizzamenu.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108406738-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108406738-1');
+</script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '83YEG';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+</head>
+
+<body>
+    
+       
+<div class="container borderlr">
+ <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="icon ion-pizza"></i> Pizza Palace</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="index.php">MAIN MENU</a></li>
+                    <li role="presentation"><a href="deals.php">DEALS </a></li>
+                    <li class="active" role="presentation"><a href="specialtypizza.php">SPECIALTY PIZZA</a></li>
+                    <li role="presentation"><a href="wings.php">WINGS </a></li>
+                    <li role="presentation"><a href="sandwiches.php">SANDWICHES </a></li>
+                    <li role="presentation"><a href="sides.php">SIDES </a></li>
+                    <li role="presentation"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp;CART </a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+<div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">
+        <div class="row product toprow">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/canadianpizza.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec_additional_top" checked = "">Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec_additional_top">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec_additional_top">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec_additional_top" checked = "">Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec_additional_top" checked = "">Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec_additional_top" checked = "">Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec_meat">Chicken (2)</label>
+                </div>
+            </div>
+        <!-- CANADIAN PIZZA ADD TO CART BUTTON -->
+        <div class = "group4 buffer">
+        	<button class="btn btn-primary btn-lg cart-button" type="button" id="canadianpizza">Add to Cart</button>
+                <script type="text/javascript">
+			document.getElementById("canadianpizza").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec');
+				var info = []
+				//name
+				info[0] = 'Canadian Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Canadian</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;pepperoni, ham, bacon, mushroom</span></h3>
+               
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/meatlovers.jpg" class="img-responsive">
+
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec1_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec1_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec1_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec1_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec1_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec1_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec1_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec1_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec1_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec1_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec1_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec1_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec1_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec1_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec1_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec1_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec1_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec1_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec1_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec1_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec1_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec1_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec1_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec1_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec1_additional_top">Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec1_additional_top">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec1_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec1_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec1_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec1_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec1_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec1_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec1_additional_top">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec1_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec1_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec1_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec1_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec1_additional_top" checked = "">Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec1_additional_top" checked = "">Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec1_additional_top" checked = "">Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec1_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec1_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec1_additional_top" checked = "">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec1_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec1_meat">Chicken (2)</label>
+                </div>
+            </div>
+        <div class = "group4 buffer">
+        <!-- MEAT LOVERS PIZZA-->
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="meatlovers">Add to Cart</button>
+        	<script type="text/javascript">
+			document.getElementById("meatlovers").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec1');
+				var info = []
+				//name
+				info[0] = 'Meat Lovers Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);;
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Meat Lovers</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;pepperoni, ham, bacon, italian sausage</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/deluxe.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec2_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec2_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec2_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec2_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec2_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec2_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec2_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec2_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec2_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec2_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec2_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec2_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec2_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec2_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec2_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec2_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec2_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec2_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec2_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec2_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec2_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec2_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec2_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec2_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec2_additional_top" checked = "">Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec2_additional_top" checked = "">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec2_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec2_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec2_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec2_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec2_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec2_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec2_additional_top">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec2_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec2_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec2_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec2_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec2_additional_top" checked = "">Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec2_additional_top">Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec2_additional_top" checked = "">Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec2_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec2_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec2_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec2_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec2_meat">Chicken (2)</label>
+                </div>
+            </div>
+        <div class = "group4 buffer">
+        <!-- DELUXE PIZZA -->
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="deluxe">Add to Cart</button>
+                    	<script type="text/javascript">
+			document.getElementById("deluxe").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec2');
+				var info = []
+				//name
+				info[0] = 'Deluxe Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Deluxe</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;pepperoni, mushroom, green pepper, bacon</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/vegetarian.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec3_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec3_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec3_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec3_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec3_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec3_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec3_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec3_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec3_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec3_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec3_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec3_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec3_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec3_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec3_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec3_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec3_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec3_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec3_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec3_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec3_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec3_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec3_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec3_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec3_additional_top" checked = "">Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec3_additional_top" checked = "">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec3_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec3_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec3_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec3_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec3_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec3_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec3_additional_top" checked = "">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec3_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec3_additional_top" checked = "">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec3_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec3_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec3_additional_top" >Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec3_additional_top" >Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec3_additional_top" >Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec3_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec3_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec3_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec3_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec3_meat">Chicken (2)</label>
+                </div>
+            </div>
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="vegetarian">Add to Cart</button>
+                            <script type="text/javascript">
+			document.getElementById("vegetarian").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec3');
+				var info = []
+				//name
+				info[0] = 'Vegetarian Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Vegetarian</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;mushroom, green pepper, red onion, tomatoes</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/cheese.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec4_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec4_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec4_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec4_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec4_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec4_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec4_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec4_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec4_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec4_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec4_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec4_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec4_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec4_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec4_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec4_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec4_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec4_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec4_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec4_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec4_additional_top" checked = "">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec4_additional_top" checked = "">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec4_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec4_additional_top" checked = "">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec4_additional_top" >Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec4_additional_top">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec4_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec4_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec4_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec4_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec4_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec4_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec4_additional_top">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec4_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec4_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec4_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec4_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec4_additional_top" >Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec4_additional_top" >Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec4_additional_top">Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec4_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec4_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec4_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec4_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec4_meat">Chicken (2)</label>
+                </div>
+            </div>
+            <!-- CHEESE PIZZA -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="cheeselovers">Add to Cart</button>
+                            <script type="text/javascript">
+			document.getElementById("cheeselovers").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec4');
+				var info = []
+				//name
+				info[0] = 'Cheese Lovers Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Cheese Lovers</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;mozzarella, feta, cheddar</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/hawaiian.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec5_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec5_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec5_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec5_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec5_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec5_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec5_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec5_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec5_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec5_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec5_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec5_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec5_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec5_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec5_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec5_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec5_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec5_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec5_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec5_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec5_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec5_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec5_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec5_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec5_additional_top" >Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec5_additional_top">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec5_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec5_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec5_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec5_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec5_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec5_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec5_additional_top">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec5_additional_top" checked = "">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec5_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec5_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec5_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec5_additional_top" >Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec5_additional_top" checked = "">Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec5_additional_top" checked = "">Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec5_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec5_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec5_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec5_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec5_meat">Chicken (2)</label>
+                </div>
+            </div>
+            <!-- HAWAIIAN PIZZA -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="hawaiian">Add to Cart</button>
+                            <script type="text/javascript">
+			document.getElementById("hawaiian").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec5');
+				var info = []
+				//name
+				info[0] = 'Hawaiian Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Hawaiian</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;ham, bacon, pineapple</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/Mexican.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec6_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec6_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec6_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec6_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec6_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec6_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec6_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec6_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec6_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec6_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec6_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec6_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec6_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec6_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec6_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec6_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec6_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec6_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec6_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec6_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec6_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec6_additional_top">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec6_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec6_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec6_additional_top" >Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec6_additional_top">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec6_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec6_additional_top">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec6_additional_top" checked = "">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec6_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec6_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec6_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec6_additional_top" checked = "">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec6_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec6_additional_top">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec6_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec6_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec6_additional_top" >Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec6_additional_top" >Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec6_additional_top" >Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec6_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec6_additional_top" checked = "">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec6_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec6_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec6_meat">Chicken (2)</label>
+                </div>
+            </div>
+            <!-- MEXICAN PIZZA -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="mexicanpizza">Add to Cart</button>
+                            <script type="text/javascript">
+			document.getElementById("mexicanpizza").onclick = function () {
+				//toppings + prices tuple
+				var toppings = topping_desc('spec6');
+				var info = []
+				//name
+				info[0] = 'Mexican Pizza';
+				//desc
+				info[1] = toppings[0];
+				//price
+				info[2] = toppings[1].toFixed(2);
+				//ajax
+				$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+				success: function(result){	
+					location.reload();	
+				},
+				//error catcher
+				error: function (xhr, ajaxOptions, thrownError) {
+					alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				}				
+				});
+				};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Mexican</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;ground beef, red onion, jalapenos</span></h3>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/mediterranean.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend10">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="small" name="spec7_sizes">Small <strong class = "price1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 8.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                     <input type="radio" value="medium" name="spec7_sizes">Medium <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$12.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="large" name="spec7_sizes" checked="">Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$16.95</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="xlarge" name="spec7_sizes">X-Large <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$19.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="party" name="spec7_sizes">Party <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$24.95</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4">
+            <span>Pizza Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Free Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="thincrust" name="spec7_crust" />Thin Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="thickcrust" name="spec7_crust">Thick Crust
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcrust" name="spec7_crust" checked="">Regular Crust
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="chilipepper" name="spec7_additional_top">Chili Pepper</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="wholewheat" name="spec7_dough" />Whole Wheat Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="glutenfree" name="spec7_dough">Gluten Free Dough
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regdough" name="spec7_dough" checked="">Regular Dough
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="garlic" name="spec7_additional_top">Fresh Garlic</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="extrasauce" name="spec7_sauce" />Extra Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="nosauce" name="spec7_sauce">No Sauce
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regsauce" name="spec7_sauce" checked="">Regular Sauce
+                    </label>
+                </div>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Cheese Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class = "radio">
+                    <label>
+                        <input type="radio" value="nocheese" name="spec7_cheese" />No Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="xcheese" name="spec7_cheese">X-Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="doublecheese" name="spec7_cheese">Double Cheese
+                    </label>
+                    <br>
+                    <label>
+                        <input type="radio" value="regcheese" name="spec7_cheese" checked="">Regular Cheese
+                    </label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="cheddar" name="spec7_additional_top">Cheddar</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="feta" name="spec7_additional_top" checked = "">Feta</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="parmesan" name="spec7_additional_top">Parmesan</label>
+                        <br>
+                        <label>
+                        <input type="checkbox" value="mozzarella" name="spec7_additional_top">Mozzarella</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Vegetarian Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="mushroom" name="spec7_additional_top" >Mushroom</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenpepper" name="spec7_additional_top" checked = "">Green Pepper</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="greenolives" name="spec7_additional_top">Green Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="blackolives" name="spec7_additional_top" checked = "">Black Olives</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="hotpeppers" name="spec7_additional_top">Hot Peppers</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="redpeppers" name="spec7_additional_top">Red Peppers</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="broccoli" name="spec7_additional_top">Broccoli</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="onions" name="spec7_additional_top">Onions</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="redonions" name="spec7_additional_top" checked = "">Red Onions</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pineapple" name="spec7_additional_top">Pineapple</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="tomatoes" name="spec7_additional_top" checked = "">Tomato</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="sundriedtomatoes" name="spec7_additional_top">Sundried Tomatoes</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="spinach" name="spec7_additional_top">Spinach</label>
+                </div>
+            </div>
+
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Meat Toppings
+                </span>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="pepperoni" name="spec7_additional_top" >Pepperoni</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="ham" name="spec7_additional_top" >Ham</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="bacon" name="spec7_additional_top" >Bacon</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="salami" name="spec7_additional_top">Salami</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="groundbeef" name="spec7_additional_top">Ground Beef</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="italiansausage" name="spec7_additional_top">Italian Sausages</label>
+                </div>
+            </div>
+            <div class = "group3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="steak" name="spec7_meat">Steak (2)</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" value="chicken" name="spec7_meat">Chicken (2)</label>
+                </div>
+            </div>
+            <!-- MEDITERRANEAN PIZZA -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="medipizza">Add to Cart</button>
+		<script type="text/javascript">
+		document.getElementById("medipizza").onclick = function () {
+			//toppings + prices tuple
+			var toppings = topping_desc('spec7');
+			var info = []
+			//name
+			info[0] = 'Mediterranean Pizza';
+			//desc
+			info[1] = toppings[0];
+			//price
+			info[2] = toppings[1].toFixed(2);
+			//ajax
+			$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+			success: function(result){	
+				location.reload();	
+			},
+			//error catcher
+			error: function (xhr, ajaxOptions, thrownError) {
+		        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+		        }				
+			});
+			};
+		</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Mediterranean</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;feta, black olives, red onion, green pepper, tomatoes</span></h3>
+                                
+            </div>
+            </div>
+            </div>
+             <div class="col-md-3 col-md-offset-0 animated fadeInUp" id="cart">
+    <h2 class="cart"><span class="cart"><i class="glyphicon glyphicon-shopping-cart"></i>Cart</span></h2>
+    <div id="cart_stuff"></div>
+        <form method="LINK" action="cart.php">
+    <input type = "submit" value ="Checkout" class="btn btn-default" id="cart_button">
+    </form>
+    <ul class="list-group" id="cart_list2"></ul>
+    <ul class="list-group" id="cart_list"></ul>
+</div>
+<div class="col-md-12 footerdiv">
+<footer>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p style="color:black">181 Livingstone Street East<br> Barrie, Ontario</p>
+                            </div>
+                            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                                <p style="color:black">(705) 503-3131</p>
+
+                            </div>
+                            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                                <p> <a href="#" target="_blank">info@pizzapalaceandwings.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-6 col-sm-4 footer-about">
+                            <p> </p>
+                            <p> </p>
+                            <p> Pricing is subject to change and taxes are not included. Images are indicative of the quality and style of the specification and may not represent wholly the finished product. </p>
+                            <strong class ="footer-text-novus"> Website Developed by </strong><a href ="https://novusweb.ca">Novus</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+</div>
+
+</div>
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu_items.js"></script>
+    <script src="assets/js/sidecart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='autoUpdate.php' type='application/javascript'></script>
+</body>
+
+</html>

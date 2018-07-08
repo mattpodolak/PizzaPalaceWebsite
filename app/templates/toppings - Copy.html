@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+
+{% block toppings %}
+<form action="" method="post"> 
+	{{ form.hidden_tag() }} 
+     <div class = "group4 buffer">
+<!--SIZES-->
+	<div class="content2 extend10 borders">	
+		<div class = "group4">
+			<span>Pick a Size</span>
+			<hr class = "grouphr"/>
+		</div>
+		<div class = "group3">		
+			<div class="radio">
+				<label>
+				<input type="radio" value="small">Small <strong>$ 8.95</strong>
+				</label>
+			</div>			
+			<div class="radio">
+				<label>
+				<input type="radio" value="medium">Medium <strong>$12.95</strong>
+				</label>
+			</div>
+		</div>	
+		<div class = "group3">
+			<div class="radio">
+				<label>
+				<input type="radio" value="large">Large <strong>$16.95</strong>
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+				<input type="radio" value="xlarge">X-Large <strong>$19.95</strong>
+				</label>
+			</div>
+		</div>		
+		<div class = "group3">
+			<div class="radio">
+				<label>
+				<input type="radio" value="party">Party <strong>$24.95</strong>
+				</label>
+			</div>
+		</div>
+		        							<!--CRUST-->
+		<div class = "group4">
+			<span>Pizza Toppings</span>
+			<hr class = "grouphr"/>
+		</div>
+		
+		<div class = "group6">
+			<span class = "toppingtitle">
+			Free Toppings
+			</span>
+		</div>		
+		<div class = "group3">
+			<div class = "radio">
+				<label>
+				<input type="radio" value="thincrust" name="cyop_crust" />Thin Crust
+				</label>
+				<br>		
+				<label>
+				<input type="radio" value="thickcrust" name="cyop_crust">Thick Crust
+				</label>
+				<br>			
+				<label>
+				<input type="radio" value="regcrust" name="cyop_crust" checked="">Regular Crust
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="chilipepper" name="cyop_additional_top">Chili Pepper
+				</label>
+			</div>
+		</div>            
+                        						<!--DOUGH-->
+		<div class = "group3">
+			<div class = "radio">
+				<label>
+				<input type="radio" value="wholewheat" name="cyop_dough" />Whole Wheat Dough
+				</label>
+				<br>				
+				<label>
+				<input type="radio" value="glutenfree" name="cyop_dough">Gluten Free Dough
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="regdough" name="cyop_dough" checked="">Regular Dough
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="garlic" name="cyop_additional_top">Fresh Garlic</label>
+			</div>
+		</div>
+                        						<!--SAUCE-->
+		<div class = "group3">
+			<div class = "radio">
+				<label>
+				<input type="radio" value="extrasauce" name="cyop_sauce" />Extra Sauce
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="nosauce" name="cyop_sauce">No Sauce
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="regsauce" name="cyop_sauce" checked="">Regular Sauce
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="parmesan" name="cyop_additional_top">Parmesan</label>
+			</div>
+		</div>
+		
+		<div class = "group6">
+			<span class = "toppingtitle">
+			Cheese Toppings
+			</span>
+		</div>
+                        						<!--CHEESE-->
+		<div class = "group3">
+			<div class = "radio">
+				<label>
+				<input type="radio" value="nocheese" name="cyop_cheese" />No Cheese
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="xcheese" name="cyop_cheese">X-Cheese
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="doublecheese" name="cyop_cheese">Double Cheese (2)
+				</label>
+				<br>
+				<label>
+				<input type="radio" value="regcheese" name="cyop_cheese" checked="">Regular Cheese
+				</label>
+			</div>
+		</div>
+		
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="cheddar" name="cyop_additional_top">Cheddar</label>
+				<br>
+				<label>
+				<input type="checkbox" value="feta" name="cyop_additional_top">Feta</label>
+			</div>
+		</div>
+		
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="mozzarella" name="cyop_additional_top">Mozzarella</label>
+			</div>
+		</div>
+                        						<!--VEGETARIAN TOPPINGS-->
+		<div class = "group6">
+			<span class = "toppingtitle">
+			Vegetarian Toppings
+			</span>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="mushroom" name="cyop_additional_top">Mushroom</label>
+				<br>
+				<label>
+				<input type="checkbox" value="greenpepper" name="cyop_additional_top">Green Pepper</label>
+				<br>
+				<label>
+				<input type="checkbox" value="greenolives" name="cyop_additional_top">Green Olives</label>
+				<br>
+				<label>
+				<input type="checkbox" value="blackolives" name="cyop_additional_top">Black Olives</label>
+				<br>
+				<label>
+				<input type="checkbox" value="hotpeppers" name="cyop_additional_top">Hot Peppers</label>
+			</div>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="redpeppers" name="cyop_additional_top">Red Peppers</label>
+				<br>
+				<label>
+				<input type="checkbox" value="broccoli" name="cyop_additional_top">Broccoli</label>
+				<br>
+				<label>
+				<input type="checkbox" value="onions" name="cyop_additional_top">Onions</label>
+				<br>
+				<label>
+				<input type="checkbox" value="redonions" name="cyop_additional_top">Red Onions</label>
+			</div>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="pineapple" name="cyop_additional_top">Pineapple</label>
+				<br>
+				<label>
+				<input type="checkbox" value="tomatoes" name="cyop_additional_top">Tomato</label>
+				<br>
+				<label>
+				<input type="checkbox" value="sundriedtomatoes" name="cyop_additional_top">Sundried Tomatoes</label>
+				<br>
+				<label>
+				<input type="checkbox" value="spinach" name="cyop_additional_top">Spinach</label>
+			</div>
+		</div>
+                        						<!--MEAT TOPPINGS-->
+		<div class = "group6">
+			<span class = "toppingtitle">
+			Meat Toppings
+			</span>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="pepperoni" name="cyop_additional_top">Pepperoni</label>
+				<br>
+				<label>
+				<input type="checkbox" value="ham" name="cyop_additional_top">Ham</label>
+				<br>
+				<label>
+				<input type="checkbox" value="bacon" name="cyop_additional_top">Bacon</label>
+			</div>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="salami" name="cyop_additional_top">Salami</label>
+				<br>
+				<label>
+				<input type="checkbox" value="groundbeef" name="cyop_additional_top">Ground Beef</label>
+				<br>
+				<label>
+				<input type="checkbox" value="italiansausage" name="cyop_additional_top">Italian Sausages</label>
+			</div>
+		</div>
+		<div class = "group3">
+			<div class="checkbox">
+				<label>
+				<input type="checkbox" value="chicken" name="cyop_meat">Chicken (2)</label>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+
+{% endblock %}

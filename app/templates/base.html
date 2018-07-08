@@ -1,0 +1,82 @@
+<html>
+    <head>
+      {% if title %}
+      <title>Pizza Palace - {{ title }}</title>
+      {% else %}
+      <title>Welcome to Pizza Palace</title>
+      {% endif %}
+      <!--<meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='animate.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    </head>
+    <body>
+      <div class = "container borderlr" id="main-body-container">
+        <nav class="navbar navbar-default" id="header">
+          <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-big-link" href="#">Pizza Palace Ordering</a>
+              <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+              <ul class="nav navbar-nav">
+                <li class="active" role="presentation"><a href="{{ url_for('index') }}">MAIN MENU</a></li>
+                <li role="presentation"><a href="{{ url_for('deals') }}">DEALS </a></li>
+                <li role="presentation"><a href="{{ url_for('specialtypizza') }}">SPECIALTY PIZZA</a></li>
+                <li role="presentation"><a href="{{ url_for('wings') }}">WINGS </a></li>
+                <li role="presentation"><a href="{{ url_for('sandwiches') }}">SANDWICHES </a></li>
+                <li role="presentation"><a href="{{ url_for('sides') }}">SIDES </a></li>
+                <li role="presentation"><a href="{{ url_for('cart') }}"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp;CART </a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+        <div class="col-md-12 footerdiv">
+          <footer>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                  <p style="color:black">181 Livingstone Street East<br> Barrie, Ontario</p>
+                </div>
+                <div>
+                  <i class="fa fa-phone footer-contacts-icon"></i>
+                  <p style="color:black">(705) 503-3131</p>
+                </div>
+                <div>
+                  <i class="fa fa-envelope footer-contacts-icon"></i>
+                  <p> <a href="#" target="_blank">info@pizzapalaceandwings.com</a></p>
+                </div>
+              </div>
+              <div class="clearfix visible-sm-block"></div>
+              <div class="col-md-6 col-sm-4 footer-about">
+                <p> </p>
+                <p> </p>
+                <p> Pricing is subject to change and taxes are not included. Images are indicative of the quality and style of the specification and may not represent wholly the finished  product. </p>
+                <strong class ="footer-text-novus"> Website Developed by </strong><a href ="https://novusweb.ca">Novus</a>
+              </div>
+            </div>
+          </footer>
+      </div>
+    </div>
+    
+    
+    <!--<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu_items.js"></script>
+    <script src="assets/js/sidecart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+</body>
+
+</html>

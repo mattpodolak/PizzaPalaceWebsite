@@ -1,0 +1,386 @@
+<?php
+	session_start();
+	require('connection.php');
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Palace - Wings</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/intext.css">
+    <link rel="stylesheet" href="assets/css/pizzafooter.css">
+    <link rel="stylesheet" href="assets/css/pizzamenu.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108406738-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108406738-1');
+</script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '83YEG';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+</head>
+
+<body>
+            
+<div class="container borderlr">
+<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="icon ion-pizza"></i> Pizza Palace</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="index.php">MAIN MENU</a></li>
+                    <li role="presentation"><a href="deals.php">DEALS </a></li>
+                    <li role="presentation"><a href="specialtypizza.php">SPECIALTY PIZZA</a></li>
+                    <li class="active" role="presentation"><a href="wings.php">WINGS </a></li>
+                    <li role="presentation"><a href="sandwiches.php">SANDWICHES </a></li>
+                    <li role="presentation"><a href="sides.php">SIDES </a></li>
+                    <li role="presentation"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp;CART </a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">
+        <div class="row product toprow">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/wings.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="onepound" name="bbq_wings" checked="">1 lb <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$9.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="twopounds" name="bbq_wings">2 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$18.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="fourpounds" name="bbq_wings">4 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$36.99</strong>
+                </label>
+            </div>
+        </div>
+        <!-- BBQ WINGS -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="bbqwings">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("bbqwings").onclick = function () {
+					//toppings + prices tuple
+					var toppings = wing_order('bbq');
+					var info = []
+					//name
+					info[0] = 'BBQ Wings - ' + toppings[0];
+					//desc
+					info[1] = 'wings';
+					//price
+					info[2] = toppings[1];
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span> &nbsp;&nbsp;BBQ</span></h2>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/honeygarlic.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="onepound" name="bbq1_wings" checked="">1 lb <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$9.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="twopounds" name="bbq1_wings">2 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$18.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="fourpounds" name="bbq1_wings">4 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$36.99</strong>
+                </label>
+            </div>
+        </div>
+        <!-- Honey Garlic Wings -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="honeygarlicwings">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("honeygarlicwings").onclick = function () {
+					//toppings + prices tuple
+					var toppings = wing_order('bbq1');
+					var info = []
+					//name
+					info[0] = 'Honey Garlic Wings - ' + toppings[0];
+					//desc
+					info[1] = 'wings';
+					//price
+					info[2] = toppings[1]
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span> &nbsp;&nbsp;Honey Garlic</span></h2>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/medium.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="onepound" name="bbq2_wings" checked="">1 lb <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$9.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="twopounds" name="bbq2_wings">2 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$18.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="fourpounds" name="bbq2_wings">4 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$36.99</strong>
+                </label>
+            </div>
+        </div>
+        <!-- Medium Wings -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="mediumwings">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("mediumwings").onclick = function () {
+					//toppings + prices tuple
+					var toppings = wing_order('bbq2');
+					var info = []
+					//name
+					info[0] = 'Medium Wings - ' + toppings[0];
+					//desc
+					info[1] = 'wings';
+					//price
+					info[2] = toppings[1]
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span> &nbsp;&nbsp;Medium <font color="orange"><i class="glyphicon glyphicon-fire"></i><i class="glyphicon glyphicon-fire"></i></font></span></h2>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/hot.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick a Size</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="onepound" name="bbq3_wings" checked="">1 lb <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$9.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="twopounds" name="bbq3_wings">2 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$18.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="fourpounds" name="bbq3_wings">4 lbs <strong class = "pricew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$36.99</strong>
+                </label>
+            </div>
+        </div>
+        <!-- Hot Wings -->
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="hotwings">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("hotwings").onclick = function () {
+					//toppings + prices tuple
+					var toppings = wing_order('bbq3');
+					var info = []
+					//name
+					info[0] = 'Hot Wings - ' + toppings[0];
+					//desc
+					info[1] = 'wings';
+					//price
+					info[2] = toppings[1]
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span> &nbsp;&nbsp;Hot <font color="red"><i class="glyphicon glyphicon-fire"></i><i class="glyphicon glyphicon-fire"></i><i class="glyphicon glyphicon-fire"></i><i class="glyphicon glyphicon-fire"></i></font></span></h2>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-3 col-md-offset-0 animated fadeInUp" id="cart">
+    <h2 class="cart"><span class="cart"><i class="glyphicon glyphicon-shopping-cart"></i>Cart</span></h2>
+    <div id="cart_stuff"></div>
+        <form method="LINK" action="cart.php">
+    <input type = "submit" value ="Checkout" class="btn btn-default" id="cart_button">
+    </form>
+    <ul class="list-group" id="cart_list2"></ul>
+    <ul class="list-group" id="cart_list"></ul>
+</div>
+<div class="col-md-12 footerdiv">
+<footer>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p style="color:black">181 Livingstone Street East<br> Barrie, Ontario</p>
+                            </div>
+                            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                                <p style="color:black">(705) 503-3131</p>
+
+                            </div>
+                            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                                <p> <a href="#" target="_blank">info@pizzapalaceandwings.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-6 col-sm-4 footer-about">
+                            <p> </p>
+                            <p> </p>
+                            <p> Pricing is subject to change and taxes are not included. Images are indicative of the quality and style of the specification and may not represent wholly the finished product. </p>
+                            <strong class ="footer-text-novus"> Website Developed by </strong><a href ="https://novusweb.ca">Novus</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+</div>
+        
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu_items.js"></script>
+    <script src="assets/js/sidecart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='autoUpdate.php' type='application/javascript'></script>
+</body>
+
+</html>

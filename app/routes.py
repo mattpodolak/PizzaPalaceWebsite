@@ -1,0 +1,59 @@
+from app import flapp
+from app.forms import LoginForm
+from flask import render_template, flash, redirect
+
+@flapp.route('/')
+@flapp.route('/index')
+def index():
+    return render_template('index.html', title='Home')
+
+@flapp.route('/deals')
+def deals():
+    deal-items = [
+        {
+            'name': 'Large Pizza Deal',
+            'desc': 'Beautiful day in Portland!'
+        },
+        {
+            'name': 'Large Pizza Deal',
+            'desc': 'Beautiful day in Portland!'
+        },
+        {
+            'name': 'Large Pizza Deal',
+            'desc': 'Beautiful day in Portland!'
+        }
+    ]
+    return render_template('deals.html', title='Deals', items=deal-items)
+
+@flapp.route('/sides')
+def sides():
+    return render_template('sides.html', title='Sides')
+
+@flapp.route('/specialtypizza')
+def specialtypizza():
+    return render_template('specialtypizza.html', title='Specialty Pizza')
+
+@flapp.route('/sandwiches')
+def sandwiches():
+    return render_template('sandwiches.html', title='Sandwiches')
+
+@flapp.route('/wings')
+def wings():
+    return render_template('wings.html', title='Wings')
+
+@flapp.route('/cart')
+def cart():
+    return render_template('cart.html', title='Cart')
+
+@flapp.route('/checkout')
+def checkout():
+    return render_template('checkout.html', title='Checkout')
+
+@flapp.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect(url_for('index'))
+    return render_template('login.html', title='Sign In', form=form)

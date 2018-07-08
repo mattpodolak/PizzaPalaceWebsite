@@ -1,0 +1,293 @@
+<?php
+	session_start();
+	require('connection.php');
+	
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Palace - Sandwiches</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/intext.css">
+    <link rel="stylesheet" href="assets/css/pizzafooter.css">
+    <link rel="stylesheet" href="assets/css/pizzamenu.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108406738-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108406738-1');
+</script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '83YEG';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+</head>
+
+<body>
+           
+<div class="container borderlr">
+ <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="icon ion-pizza"></i> Pizza Palace</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="index.php">MAIN MENU</a></li>
+                    <li role="presentation"><a href="deals.php">DEALS </a></li>
+                    <li role="presentation"><a href="specialtypizza.php">SPECIALTY PIZZA</a></li>
+                    <li role="presentation"><a href="wings.php">WINGS </a></li>
+                    <li class="active" role="presentation"><a href="sandwiches.php">SANDWICHES </a></li>
+                    <li role="presentation"><a href="sides.php">SIDES </a></li>
+                    <li role="presentation"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp;CART </a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">
+        <div class="row product toprow">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/newmeatball.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Meatball $6.99</span></h2>
+                      <div class="header3 buffer" id="meatballsub">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("meatballsub").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Meatball';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/veal.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Veal Parmesan $8.99</span></h2>
+                     <div class="header3 buffer" id="vealsub">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("vealsub").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Veal';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 8.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/chickenparm.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Chicken Parmesan $8.99</span></h2>
+                     <div class="header3 buffer" id="chickenparm">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("chickenparm").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Chicken Parm';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 8.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img class="img-responsive" src="assets/img/chicken.jpg">
+<h2><span> &nbsp;&nbsp;Chicken $6.99</span></h2>
+                     <div class="header3 buffer" id="chickensub">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("chickensub").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Chicken';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/pizza.jpg" width="600" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Pizza $6.99</span></h2>
+                               <div class="header3 buffer" id="pizzasub">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("pizzasub").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Pizza';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/vegetable.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Vegetable $6.99</span></h2>
+                                <div class="header3 buffer" id="vegetablesub">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("vegetablesub").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Vegetable';
+					//desc
+					info[1] = 'sandwich';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        </div>
+                <div class="col-md-3 col-md-offset-0 animated fadeInUp" id="cart">
+    <h2 class="cart"><span class="cart"><i class="glyphicon glyphicon-shopping-cart"></i>Cart</span></h2>
+    <!-- Cart stuff -->
+    <div id="cart_stuff"></div>
+        <form method="LINK" action="cart.php">
+    <input type = "submit" value ="Checkout" class="btn btn-default" id="cart_button">
+    </form>
+    <ul class="list-group" id="cart_list2"></ul>
+    <ul class="list-group" id="cart_list"></ul>
+</div>
+<div class="col-md-12 footerdiv">
+<footer>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p style="color:black">181 Livingstone Street East<br> Barrie, Ontario</p>
+                            </div>
+                            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                                <p style="color:black">(705) 503-3131</p>
+
+                            </div>
+                            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                                <p> <a href="#" target="_blank">info@pizzapalaceandwings.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-6 col-sm-4 footer-about">
+                            <p> </p>
+                            <p> </p>
+                            <p> Pricing is subject to change and taxes are not included. Images are indicative of the quality and style of the specification and may not represent wholly the finished product. </p>
+                            <strong class ="footer-text-novus"> Website Developed by </strong><a href ="https://novusweb.ca">Novus</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+</div>
+        
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu_items.js"></script>
+    <script src="assets/js/sidecart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='autoUpdate.php' type='application/javascript'></script>
+</body>
+
+</html>

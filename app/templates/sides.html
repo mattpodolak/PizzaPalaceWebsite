@@ -1,0 +1,629 @@
+<?php
+	session_start();
+	require('connection.php');
+	
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Palace - Sides</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/intext.css">
+    <link rel="stylesheet" href="assets/css/pizzafooter.css">
+    <link rel="stylesheet" href="assets/css/pizzamenu.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108406738-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-108406738-1');
+</script>
+    
+    <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '83YEG';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+    d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+    ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+</head>
+
+<body>         
+<div class="container borderlr">
+ <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i class="icon ion-pizza"></i> Pizza Palace</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation"><a href="index.php">MAIN MENU</a></li>
+                    <li role="presentation"><a href="deals.php">DEALS </a></li>
+                    <li role="presentation"><a href="specialtypizza.php">SPECIALTY PIZZA</a></li>
+                    <li role="presentation"><a href="wings.php">WINGS </a></li>
+                    <li role="presentation"><a href="sandwiches.php">SANDWICHES </a></li>
+                    <li class="active" role="presentation"><a href="sides.php">SIDES </a></li>
+                    <li role="presentation"><a href="cart.php"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> &nbsp;CART </a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    <div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">
+        <div class="row product toprow">
+            <div class="col-md-6 col-md-offset-1 row-menu-item" id="meatball">
+                <img src="assets/img/salad.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick a Salad</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="ceasar" name="salads" checked="">Ceasar <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$6.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="chickenceasar" name="salads">Chicken Ceasar <strong class = "price3">&nbsp;&nbsp;&nbsp;&nbsp;$8.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="greek" name="salads">Greek <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$6.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="saladside">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("saladside").onclick = function () {
+					var amount = document.getElementsByName('salads');
+					var amount_value;
+					var salad_price = 0;
+					var saladname;
+					for(var i = 0; i < amount.length; i++){
+						if(amount[i].checked){
+							amount_value = amount[i].value;
+						}
+					}
+					if(amount_value == 'ceasar'){
+						salad_price = 6.99;
+						saladname = 'Ceasar Salad';
+					}
+					else if(amount_value == 'chickenceasar'){
+						salad_price = 8.99;
+						saladname = 'Chicken Ceasar Salad';
+					}
+					else if(amount_value == 'greek'){
+						salad_price = 6.99;
+						saladname = 'Greek Salad';
+					}
+					var all_checkboxes = jQuery(':checkbox'); // choose & store all checkboxes
+					all_checkboxes.prop('checked', false); 
+					var info = []
+					//name
+					info[0] = saladname;
+					//desc
+					info[1] = "sides";
+					//price
+					info[2] = salad_price;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span> &nbsp;&nbsp;Salads</span></h2>
+               
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/potatowedges.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Potato Wedges $5.99</span></h2>
+                    <div class="header3 buffer" id="potatowedgesside">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("potatowedgesside").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Potato Wedges';
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = 5.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/cheesypotatowedges.jpg" class="img-responsive">
+<h2><span>&nbsp;&nbsp;Cheesy Potato Wedges $18.99</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;w/ mozarella, mushrooms, and onions</span></h3>
+                    <div class="header3 buffer" id="cheesypotatowedgesside">Add to Cart</div>
+            <script type="text/javascript">
+                document.getElementById("cheesypotatowedgesside").onclick = function () {
+                    var info = []
+                    //name
+                    info[0] = 'Cheesy Potato Wedges';
+                    //desc
+                    info[1] = 'sides';
+                    //price
+                    info[2] = 18.99;
+                    //ajax
+                    $.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+                    success: function(result){  
+                        location.reload();  
+                    },
+                    //error catcher
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            alert("ERROR:" + xhr.responseText+" - "+thrownError);
+                        }               
+                    });
+                    };
+            </script>
+            </div>
+        </div>
+         <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/fries.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Fries $4.99</span></h2>
+                    <div class="header3 buffer" id="friesside">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("friesside").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Fries';
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = 4.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+         <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/poutine.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Classic Poutine $6.99</span></h2>
+                    <div class="header3 buffer" id="poutineside">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("poutineside").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Classic Poutine';
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+         <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/chickenfingers.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;4pc Chicken Fingers w/ Fries $8.99</span></h2>
+                    <div class="header3 buffer" id="chickenfingerside">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("chickenfingerside").onclick = function () {
+					var info = []
+					//name
+					info[0] = '4pc Chicken Fingers with fries';
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = 8.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+                 <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/chickennuggets.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;12pc Chicken Nuggets $6.99</span></h2>
+                    <div class="header3 buffer" id="chickennuggets">Add to Cart</div>
+            <script type="text/javascript">
+                document.getElementById("chickennuggets").onclick = function () {
+                    var info = []
+                    //name
+                    info[0] = '12pc Chicken Nuggets';
+                    //desc
+                    info[1] = 'sides';
+                    //price
+                    info[2] = 6.99;
+                    //ajax
+                    $.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+                    success: function(result){  
+                        location.reload();  
+                    },
+                    //error catcher
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            alert("ERROR:" + xhr.responseText+" - "+thrownError);
+                        }               
+                    });
+                    };
+            </script>
+            </div>
+        </div>
+                         <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/chickennuggetsfries.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;12pc Chicken Nuggets w/ Fries $7.99</span></h2>
+                    <div class="header3 buffer" id="chickennuggetsfries">Add to Cart</div>
+            <script type="text/javascript">
+                document.getElementById("chickennuggetsfries").onclick = function () {
+                    var info = []
+                    //name
+                    info[0] = '12pc Chicken Nuggets w/ Fries';
+                    //desc
+                    info[1] = 'sides';
+                    //price
+                    info[2] = 7.99;
+                    //ajax
+                    $.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+                    success: function(result){  
+                        location.reload();  
+                    },
+                    //error catcher
+                    error: function (xhr, ajaxOptions, thrownError) {
+                            alert("ERROR:" + xhr.responseText+" - "+thrownError);
+                        }               
+                    });
+                    };
+            </script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/garlicbread.jpg" class="img-responsive" width="600">
+                              <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend11">
+     <div class = "group4">
+            <span>Pick Toppings</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="plain" name="garlicbread" checked="">Plain <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$2.75</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group3">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="withcheese" name="garlicbread">With Cheese <strong class = "price3">&nbsp;&nbsp;&nbsp;&nbsp;$3.99</strong>
+                </label>
+            </div>
+        </div>
+        <div class = "group3">
+            
+        </div>
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="garlicbreadside">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("garlicbreadside").onclick = function () {
+					var amount = document.getElementsByName('garlicbread');
+					var amount_value;
+					var gbread_price = 0;
+					for(var i = 0; i < amount.length; i++){
+						if(amount[i].checked){
+							amount_value = amount[i].value;
+						}
+					}
+					if(amount_value == 'plain'){
+						gbread_price = 2.75;
+					}
+					else if(amount_value == 'withcheese'){
+						gbread_price = 3.99;
+					}
+					var all_checkboxes = jQuery(':checkbox'); // choose & store all checkboxes
+					all_checkboxes.prop('checked', false); 
+					var info = []
+					//name
+					info[0] = 'Garlic Bread' + ' ' + amount_value;
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = gbread_price;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Garlic Bread</span><br></h2>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/breadstick.jpg" class="img-responsive">
+<h2><span> &nbsp;&nbsp;Breadsticks $6.99</span></h2>
+                                     <div class="header3 buffer" id="breadsticksside">Add to Cart</div>
+			<script type="text/javascript">
+				document.getElementById("breadsticksside").onclick = function () {
+					var info = []
+					//name
+					info[0] = 'Breadsticks';
+					//desc
+					info[1] = 'sides';
+					//price
+					info[2] = 6.99;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-md-6 col-md-offset-1 row-menu-item">
+                <img src="assets/img/pasta.jpg" class="img-responsive">
+                <div class="container2 buffer">
+    <div class="header2">
+        Click To Order
+    </div>
+    <div class="content2 extend12">
+     <div class = "group4">
+            <span>Pick Pasta</span>
+            <hr class = "grouphr"/>
+        </div>
+        <div class = "group50">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="single" name="lasagna_side" checked="">Single <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$8.99</strong>
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" value="spaghetti" name="lasagna_side">Spaghetti & Meat Sauce <strong>&nbsp;&nbsp;&nbsp;$8.99</strong>
+                </label>
+            </div>
+
+        </div>
+        <div class = "group50">
+            <div class="radio">
+                <label>
+                    <input type="radio" value="double" name="lasagna_side">Double (with 2 pops) <strong class = "price3">&nbsp;&nbsp;&nbsp;&nbsp;$16.99</strong>
+                </label>
+            </div>
+            <div class = "group6">
+                <span class = "toppingtitle">
+                Pick 2 Pops
+                </span>
+            </div>
+            <div class = "group50">
+                <select class="form-control" id="lasagna_pop1">
+                    <option value="Coke">Coke</option>
+                    <option value="DietCoke">Diet Coke</option>
+                    <option value="CokeZero">Coke Zero</option>
+                    <option value="Sprite">Sprite</option>
+                    <option value="Nestea">Nestea Iced Tea</option>
+                    <option value="BarqsRootBeer">Barq's Root Beer</option>
+                    <option value="CanadaDry">Canada Dry</option>
+                    <option value="CPlus">C-Plus</option>
+                    <option value="Fresca">Fresca</option>
+                    <option value="Brio">Brio</option>
+                    <option value="Water">Water</option>
+                </select>
+            </div>
+            <div class = "group50">
+                <select class="form-control" id="lasagna_pop2">
+                    <option value="Coke">Coke</option>
+                    <option value="DietCoke">Diet Coke</option>
+                    <option value="CokeZero">Coke Zero</option>
+                    <option value="Sprite">Sprite</option>
+                    <option value="Nestea">Nestea Iced Tea</option>
+                    <option value="BarqsRootBeer">Barq's Root Beer</option>
+                    <option value="CanadaDry">Canada Dry</option>
+                    <option value="CPlus">C-Plus</option>
+                    <option value="Fresca">Fresca</option>
+                    <option value="Brio">Brio</option>
+                    <option value="Water">Water</option>
+                </select>
+            </div>
+        </div>
+        <div class = "group4 buffer">
+            <button class="btn btn-primary btn-lg cart-button" type="button" id="lasagnaside">Add to Cart</button>
+			<script type="text/javascript">
+				document.getElementById("lasagnaside").onclick = function () {
+					var lasagna = document.getElementsByName('lasagna_side');
+					var lasagna_value;
+					var lasagna_price = 0;
+					var pop1 = document.getElementById("lasagna_pop1");
+					var pop1sel = pop1.options[pop1.selectedIndex].value;
+					var pop2 = document.getElementById("lasagna_pop2");
+					var pop2sel = pop2.options[pop2.selectedIndex].value;
+					var info = []
+					for(var i = 0; i < lasagna.length; i++){
+						if(lasagna[i].checked){
+							lasagna_value = lasagna[i].value;
+						}
+					}
+					if(lasagna_value == 'single'){
+						lasagna_price = 8.99;
+						info[0] = 'Single Lasagna';
+						info[1] = 'single lasagna' + ' +' + pop1sel + ' +' + pop2sel;
+					}
+					else if(lasagna_value == 'double'){
+						info[0] = 'Double Lasagna';
+						info[1] = 'double lasagna' + ' +' + pop1sel + ' +' + pop2sel;
+						lasagna_price = 16.99;
+					}
+					else if(lasagna_value == 'spaghetti'){
+						lasagna_price = 8.99;
+						info[0] = 'Spaghetti';
+						info[1] = 'spaghetti' + ' +' + pop1sel + ' +' + pop2sel;
+					}
+					var all_checkboxes = jQuery(':checkbox'); // choose & store all checkboxes
+					all_checkboxes.prop('checked', false); 
+					//price
+					info[2] = lasagna_price;
+					//ajax
+					$.ajax({url: "insert.php", type: "GET", data: {order_name : info}, 
+					success: function(result){	
+						location.reload();	
+					},
+					//error catcher
+					error: function (xhr, ajaxOptions, thrownError) {
+				        	alert("ERROR:" + xhr.responseText+" - "+thrownError);
+				        }				
+					});
+					};
+			</script>
+        </div>
+    </div>
+</div>
+<h2><span>&nbsp;&nbsp;Lasagna or Spaghetti & Meat Sauce</span><br></h2><h3><span>&nbsp;&nbsp;&nbsp;includes garlic bread</span></h3>
+            </div>
+        </div>
+        </div>
+                <div class="col-md-3 col-md-offset-0 animated fadeInUp" id="cart">
+    <h2 class="cart"><span class="cart"><i class="glyphicon glyphicon-shopping-cart"></i>Cart</span></h2>
+    <div id="cart_stuff"></div>
+        <form method="LINK" action="cart.php">
+    <input type = "submit" value ="Checkout" class="btn btn-default" id="cart_button">
+    </form>
+    <ul class="list-group" id="cart_list2"></ul>
+    <ul class="list-group" id="cart_list"></ul>
+</div>
+<div class="col-md-12 footerdiv">
+                <footer>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 footer-contacts">
+                            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                                <p style="color:black">181 Livingstone Street East<br> Barrie, Ontario</p>
+                            </div>
+                            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                                <p style="color:black">(705) 503-3131</p>
+
+                            </div>
+                            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                                <p> <a href="#" target="_blank">info@pizzapalaceandwings.com</a></p>
+                            </div>
+                        </div>
+                        <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-6 col-sm-4 footer-about">
+                            <p> </p>
+                            <p> </p>
+                            <p> Pricing is subject to change and taxes are not included. Images are indicative of the quality and style of the specification and may not represent wholly the finished product. </p>
+                            <strong class ="footer-text-novus"> Website Developed by </strong><a href ="https://novusweb.ca">Novus</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+</div>
+       
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu_items.js"></script>
+    <script src="assets/js/sidecart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='autoUpdate.php' type='application/javascript'></script>
+</body>
+
+</html>
