@@ -202,3 +202,24 @@ div.social-links{
   outline:none;
 }
 
+.main-container{
+  margin: auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .main-container{
+    width: 100%;
+  }
+}
+
+.menu-items{
+  width: 80%;
+  margin: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}

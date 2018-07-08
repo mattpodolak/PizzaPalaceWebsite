@@ -9,7 +9,7 @@ def index():
 
 @flapp.route('/deals')
 def deals():
-    deal-items = [
+    deal_items = [
         {
             'name': 'Large Pizza Deal',
             'desc': 'Beautiful day in Portland!'
@@ -23,7 +23,7 @@ def deals():
             'desc': 'Beautiful day in Portland!'
         }
     ]
-    return render_template('deals.html', title='Deals', items=deal-items)
+    return render_template('deals.html', title='Deals', items=deal_items)
 
 @flapp.route('/sides')
 def sides():

@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
-{% block content %}
-    {% for item in items %}
-    <div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">             
+{% block content %} 
+        {% for item in items %}            
         <div class="menu-items">
             <!--<img class="menu-img" src="{{url_for('static', filename='img/deals{{item.name}}.jpg')}}" alt="{{item.name}}"/>-->
             <h2 class="menu-items-title">
@@ -14,5 +13,5 @@
             <!--INSERT BUTTON TO LOAD ORDER FORM PAGE HERE--> 
             <!--END OF ORDER FORM-->
         </div>
-    {% endfor %}
+        {% endfor %}
 {% endblock %}

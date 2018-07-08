@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
-<div class="col-md-6 col-md-offset-1 animated fadeIn" id="main_col">             
+{% block content %}            
     <div class="menu-items">
         <img class="menu-img" src="{{url_for('static', filename='img/cyop_image3.jpg')}}" alt="Create Your Own Pizza"/>
         <h2 class="menu-items-title">
@@ -13,8 +12,8 @@
         <!--INSERT BUTTON TO LOAD ORDER FORM PAGE HERE--> 
         <!--END OF ORDER FORM-->
     </div>	
-    <a href="{{ url_for('deals') }}">
-        <div class="menu-items">
+    <div class="menu-items">
+        <a href="{{ url_for('deals') }}">
             <img class= "menu-img" src="{{url_for('static', filename='img/deals_image.jpg')}}" alt="Deals"/>
             <h2 class="menu-items-title">
                 Deals
@@ -22,10 +21,10 @@
             <p class="menu-items-desc">
                 Various special deals for ordering different combinations
             </p>
-        </div>
-    </a>
-    <a href="{{ url_for('specialtypizza') }}">
-        <div class="menu-items">
+        </a>
+    </div>
+    <div class="menu-items">
+        <a href="{{ url_for('specialtypizza') }}">
             <img class = "menu-img" src="{{url_for('static', filename='img/specialty_image.jpg')}}" alt="Specialty Pizza"/>
             <h2 class="menu-items-title">
                 Specialty Pizza
@@ -33,10 +32,10 @@
             <p class="menu-items-desc">
                 Our favourite topping combinations
             </p>
-        </div>
-    </a>
-    <a href="{{ url_for('wings') }}">
-        <div class="menu-items">
+        </a>
+    </div>
+    <div class="menu-items">
+        <a href="{{ url_for('wings') }}">
             <img class="menu-img" src="{{url_for('static', filename='img/wings_image.jpg')}}" alt="Wings"/>
             <h2 class="menu-items-title">
                 Wings
@@ -44,10 +43,10 @@
             <p class="menu-items-title">
                 Juicy and delicious wings in different flavours
             </p>
-        </div>
-    </a>
-    <a href="{{ url_for('sandwiches') }}">
-        <div class="menu-items">
+        </a>
+    </div>
+    <div class="menu-items">
+        <a href="{{ url_for('sandwiches') }}">
             <img class ="menu-img" src="{{url_for('static', filename='img/sandwich_image.jpg')}}" alt="Sandwiches"/>
             <h2 class="menu-items-title">
                 Sandwiches
@@ -55,10 +54,10 @@
             <p class="menu-items-desc">
                 Many types of oven baked sandwiches
             </p>
-        </div>
-    </a>
-    <a href="{{ url_for('sides') }}">
-        <div class="menu-items">
+        </a>
+    </div>
+    <div class="menu-items">
+        <a href="{{ url_for('sides') }}">
             <img class="menu-img" src="{{url_for('static', filename='img/pasta_image.jpg')}}" alt="Sides"/>
             <h2 class="menu-items-title">
                 Sides
@@ -66,7 +65,6 @@
             <p class="menu-items-desc">
                 Pick one of our sides to supplement your order
             </p>
-        </div>
-    </a>
-</div>
+        </a>
+    </div>
 {% endblock %}
