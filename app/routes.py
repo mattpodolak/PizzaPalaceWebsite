@@ -9,37 +9,41 @@ def index():
 
 @flapp.route('/deals')
 def deals():
+    #import data from a class containing all relational data
     deal_items = [
         {
             'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!'
+            'desc': 'Beautiful day in Portland!',
+            'price': '15'
         },
         {
             'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!'
+            'desc': 'Beautiful day in Portland!',
+            'price': '15'
         },
         {
             'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!'
+            'desc': 'Beautiful day in Portland!',
+            'price': '15'
         }
     ]
-    return render_template('deals.html', title='Deals', items=deal_items)
+    return render_template('menu.html', title='Deals', items=deal_items)
 
 @flapp.route('/sides')
 def sides():
-    return render_template('sides.html', title='Sides')
+    return render_template('menu.html', title='Sides')
 
 @flapp.route('/specialtypizza')
 def specialtypizza():
-    return render_template('specialtypizza.html', title='Specialty Pizza')
+    return render_template('menu.html', title='Specialty Pizza')
 
 @flapp.route('/sandwiches')
 def sandwiches():
-    return render_template('sandwiches.html', title='Sandwiches')
+    return render_template('menu.html', title='Sandwiches')
 
 @flapp.route('/wings')
 def wings():
-    return render_template('wings.html', title='Wings')
+    return render_template('menu.html', title='Wings')
 
 @flapp.route('/cart')
 def cart():
