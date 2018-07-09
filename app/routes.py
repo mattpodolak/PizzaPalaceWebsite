@@ -1,6 +1,7 @@
 from app import flapp
 from app.forms import LoginForm
 from flask import render_template, flash, redirect
+import app.menudata
 
 @flapp.route('/')
 @flapp.route('/index')
