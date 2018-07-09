@@ -14,8 +14,8 @@ deal_items = [
             'desc': 'Beautiful day in Portland!',
             'price': '15'
         }
-    ]
+]
 
- menu_items = {'deals': deal_items}
-
+menu_items = {'deals': deal_items}
+    
 

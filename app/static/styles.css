@@ -226,6 +226,11 @@ div.social-links{
 
 .navbar{
   background-color: #bf3e11;
+  border-color:#bf3e11;
+  border-radius: 0px;
+}
+
+.navbar-toggle{
   border: none;
 }
 

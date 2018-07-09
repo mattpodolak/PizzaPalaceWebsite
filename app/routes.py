@@ -1,7 +1,7 @@
 from app import flapp
 from app.forms import LoginForm
 from flask import render_template, flash, redirect
-import app.menudata
+from app.menudata import menu_items
 
 @flapp.route('/')
 @flapp.route('/index')
@@ -11,23 +11,7 @@ def index():
 @flapp.route('/deals')
 def deals():
     #import data from a class containing all relational data
-    deal_items = [
-        {
-            'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!',
-            'price': '15'
-        },
-        {
-            'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!',
-            'price': '15'
-        },
-        {
-            'name': 'Large Pizza Deal',
-            'desc': 'Beautiful day in Portland!',
-            'price': '15'
-        }
-    ]
+    deal_items = menu_items['deals']
     return render_template('menu.html', title='Deals', items=deal_items)
 
 @flapp.route('/sides')
