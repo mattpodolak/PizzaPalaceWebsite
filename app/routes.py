@@ -4,6 +4,7 @@ from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user
 from app.models import User
+from app import db
 from werkzeug.urls import url_parse
 
 @flapp.route('/')
@@ -66,7 +67,7 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@flapp.route('/register')
+@flapp.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
