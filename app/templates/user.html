@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hello, {{ user.firstname }}</h1>
+    <h1>Hello, {{ user.first_name }}</h1>
     <hr>
     {% for address in addresses %}
     <p>
     {{ address.name }}
-    {{ address.addressone }}
-    {{ address.addresstwo }}
+    {{ address.address_one }}
+    {{ address.address_two }}
     {{ address.city }}
-    {{ address.postalcode }}
+    {{ address.postal_code }}
     <!--{{ post.author.username }} says: <b>{{ post.body }}</b>-->
     </p>
     {% endfor %}
