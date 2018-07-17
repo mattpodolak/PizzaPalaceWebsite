@@ -1,5 +1,5 @@
 from app import flapp, url_for, request
-from app.forms import LoginForm
+from app.forms import LoginForm, RegistrationForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user
