@@ -1,5 +1,5 @@
 from app import flapp, url_for, request
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user, login_required
@@ -86,8 +86,7 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     addresses = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
+        {'name': 'Home', 'address_one': '123 Fake St', 'address_two': '', 'city': 'Potatoville', 'postal_code': 'A3B2C1'}
     ]
     return render_template('user.html', user=user, addresses=addresses)
 

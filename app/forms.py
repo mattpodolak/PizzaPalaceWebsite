@@ -35,7 +35,7 @@ class EditProfileForm(FlaskForm):
     last_name = StringField('Last Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
     phone = StringField('Phone Number', validators=[DataRequired()])
-    submit = SubmitField('Register')
+    submit = SubmitField('Save')
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
