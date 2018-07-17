@@ -1,9 +1,9 @@
 from app import flapp, url_for, request
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EditAddressForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
+from app.models import User, Address
 from app import db
 from werkzeug.urls import url_parse
 
@@ -111,3 +111,15 @@ def edit_profile():
         form.phone.data = current_user.phone
     return render_template('edit_profile.html', title='Edit Profile',
                            form=form)
+
+@flapp.route('/add_address', methods=['GET', 'POST'])
+@login_required
+def add_address():
+    form = EditAddressForm()
+    if form.validate_on_submit():
+        address = Address(name=form.name.data, address_one=form.address_one.data , address_two=form.address_two.data , postal_code=form.postal_code.data, city=form.city.data, author=current_user)
+        db.session.add(address)
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('add_address'))
+    return render_template('edit_address.html', title='Add an Address', form=form)

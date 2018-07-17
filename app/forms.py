@@ -47,5 +47,13 @@ class EditProfileForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different email address.')
 
+class EditAddressForm(FlaskForm):
+    name = StringField('Address Name', validators=[DataRequired()])
+    address_one = StringField('Address Line 1', validators=[DataRequired()])
+    address_two = StringField('Address Line 2', validators=[DataRequired()])
+    city = StringField('City', validators=[DataRequired()])
+    postal_code = StringField('Postal Code', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
 class ToppingForm(FlaskForm):
     submit = SubmitField('Add to Cart')

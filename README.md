@@ -5,8 +5,13 @@ Make new venv
 Activate venv
 'pizza-venv\Scripts\activate'
 
-Set ENVIRONMENT variable
+Set ENVIRONMENT variables
 'set FLASK_APP=pizzasite.py'
+'set MAIL_SERVER=smtp.googlemail.com'
+'set MAIL_PORT=587'
+'set MAIL_USE_TLS=1'
+'set MAIL_USERNAME=<your-gmail-username>'
+'set MAIL_PASSWORD=<your-gmail-password>'
 
 Run app
 'flask run'
