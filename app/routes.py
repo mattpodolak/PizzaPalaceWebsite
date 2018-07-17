@@ -73,7 +73,7 @@ def register():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, first_name==form.first_name.data , last_name=form.last_name.data , email=form.email.data, phone=form.phone.data)
+        user = User(username=form.username.data, first_name=form.first_name.data , last_name=form.last_name.data , email=form.email.data, phone=form.phone.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -91,7 +91,7 @@ def user(username):
     ]
     return render_template('user.html', user=user, addresses=addresses)
 
-@app.route('/edit_profile', methods=['GET', 'POST'])
+@flapp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = EditProfileForm()
