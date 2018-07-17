@@ -61,7 +61,11 @@ def login():
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
-@app.route('/logout')
+@flapp.route('/logout')
 def logout():
     logout_user()
+    return redirect(url_for('index'))
+
+@flapp.route('/signup')
+def signup():
     return redirect(url_for('index'))
