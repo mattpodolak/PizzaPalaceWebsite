@@ -5,7 +5,12 @@
     <hr>
     {% for address in addresses %}
     <p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
+    {{ address.name }}
+    {{ address.addressone }}
+    {{ address.addresstwo }}
+    {{ address.city }}
+    {{ address.postalcode }}
+    <!--{{ post.author.username }} says: <b>{{ post.body }}</b>-->
     </p>
     {% endfor %}
 {% endblock %}
