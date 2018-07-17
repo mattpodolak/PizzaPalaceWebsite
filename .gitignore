@@ -1,0 +1,5 @@
+# packages and venv
+/pizza-venv
+
+# VS code workspace
+pizzasiteWorkspace.code-workspace
