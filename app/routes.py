@@ -1,4 +1,4 @@
-from app import flapp
+from app import flapp, url_for, request
 from app.forms import LoginForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
