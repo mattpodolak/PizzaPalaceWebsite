@@ -85,9 +85,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    addresses = [
-        {'name': 'Home', 'address_one': '123 Fake St', 'address_two': '', 'city': 'Potatoville', 'postal_code': 'A3B2C1'}
-    ]
+    addresses = user.addresses
     return render_template('user.html', user=user, addresses=addresses)
 
 @flapp.route('/edit_profile', methods=['GET', 'POST'])
@@ -95,7 +93,6 @@ def user(username):
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
-        current_user.username = form.username.data
         current_user.first_name = form.first_name.data
         current_user.last_name = form.last_name.data
         current_user.email = form.email.data
@@ -104,7 +101,6 @@ def edit_profile():
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
-        form.username.data = current_user.username
         form.first_name.data = current_user.first_name
         form.last_name.data = current_user.last_name
         form.email.data = current_user.email
