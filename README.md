@@ -11,6 +11,16 @@ Set ENVIRONMENT variable
 Run app
 'flask run'
 
+Run shell in diff terminal for db manipulation
+'flask shell'
+
+Running into problems with db migration because u deleted a column?
+'db.reflect()'
+'db.drop_all()'
+delete migration scripts
+flask db migrate -m "message"
+flask db upgrade
+
 ## Base
 1. Dynamically change navbar CSS to show loaded page
 2. Change CSS so navbar and footer looks correct
