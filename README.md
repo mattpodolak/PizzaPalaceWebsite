@@ -5,11 +5,26 @@ Make new venv
 Activate venv
 'pizza-venv\Scripts\activate'
 
-Set ENVIRONMENT variable
+Set ENVIRONMENT variables
 'set FLASK_APP=pizzasite.py'
+'set MAIL_SERVER=smtp.googlemail.com'
+'set MAIL_PORT=587'
+'set MAIL_USE_TLS=1'
+'set MAIL_USERNAME=<your-gmail-username>'
+'set MAIL_PASSWORD=<your-gmail-password>'
 
 Run app
 'flask run'
+
+Run shell in diff terminal for db manipulation
+'flask shell'
+
+Running into problems with db migration because u deleted a column?
+'db.reflect()'
+'db.drop_all()'
+delete migration scripts
+flask db migrate -m "message"
+flask db upgrade
 
 ## Base
 1. Dynamically change navbar CSS to show loaded page
