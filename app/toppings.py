@@ -174,8 +174,12 @@ toppings = {
             "value": "1"
         },
         {
-            "name": "Panzo",
-            "value": "1"
+            "name": "Medium Panzo",
+            "value": "1.35"
+        },
+        {
+            "name": "Large Panzo",
+            "value": "1.5"
         }
     ],
     "Dip":[
