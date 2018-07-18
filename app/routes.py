@@ -6,6 +6,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Address
 from app import db
 from werkzeug.urls import url_parse
+import app.util as util
 
 @flapp.route('/')
 @flapp.route('/index')
@@ -128,4 +129,4 @@ def customize(category, id):
     elif request.method == 'GET':
         flash('Load form')
     return render_template('customize.html', title='Customize Menu Item',
-                           form=form)
+                           form=form, item=util.find_item(category, id))
