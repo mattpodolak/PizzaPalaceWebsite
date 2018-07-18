@@ -36,13 +36,23 @@ class EditProfileForm(FlaskForm):
     phone = StringField('Phone Number', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-    # cant get this to work right now,
-    # tried passing current user but got an error
-    # def validate_email(self, email):
-    #     if user_info.email != email.data:
-    #         user = User.query.filter_by(email=email.data).first()
-    #         if user is not None:
-    #             raise ValidationError('Please use a different email address.')
+    def __init__(self, original_username, original_email, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.original_username = original_username
+        self.original_email = original_email
+
+    # incase i add username changing functionality later
+    def validate_username(self, username):
+        if username.data != self.original_username:
+            user = User.query.filter_by(username=username.data).first()
+            if user is not None:
+                raise ValidationError('Please use a different username.')
+
+    def validate_email(self, email):
+        if email.data != self.original_email:
+            user = User.query.filter_by(email=email.data).first()
+            if user is not None:
+                raise ValidationError('Please use a different email address.')
 
 class EditAddressForm(FlaskForm):
     name = StringField('Address Name', validators=[DataRequired()])

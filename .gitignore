@@ -6,3 +6,8 @@ pizzasiteWorkspace.code-workspace
 
 # database
 app.db
+
+# cache
+/__pycache__
+/app/__pycache__
+/migrations/__pycache__
