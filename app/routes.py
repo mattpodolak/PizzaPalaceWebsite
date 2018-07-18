@@ -91,7 +91,7 @@ def user(username):
 @flapp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username, current_user.email)
     if form.validate_on_submit():
         current_user.first_name = form.first_name.data
         current_user.last_name = form.last_name.data
