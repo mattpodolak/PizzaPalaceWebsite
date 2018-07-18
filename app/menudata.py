@@ -1,5 +1,6 @@
 deal_items = [
         {
+            'id': '1',
             'name': '2 Pizza Deal',
             'desc': '2 Pizzas with 4 Toppings each, 4 Pops, and 4 Dips',
             'price': '22.99',
@@ -34,6 +35,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '2',
             'name': 'Triple Deal',
             'desc': '3 Pizzas with 3 Toppings each',
             'price': '30.99',
@@ -64,6 +66,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '3',
             'name': 'Mega Deal',
             'desc': '2 Pizzas with 3 Toppings each, 1lb of Wings, 4 Pops, 2 Dips, and Garlic Bread w/ Cheese',
             'price': '32.99',
@@ -86,6 +89,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '4',
             'name': 'Monster Deal',
             'desc': '2 Pizzas with 3 Toppings each, 2lbs of Wings, 4 Pops, 4 Dips, and Garlic Bread w/ Cheese',
             'price': '36.99',
@@ -112,6 +116,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '5',
             'name': 'Party Deal',
             'desc': '2 Topping Party Pizza with 2 Pops and 2 Dips',
             'price': '25.99',
@@ -129,6 +134,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '6',
             'name': 'Panzo and Pop',
             'desc': '2 Panzerottis with 3 Toppings each, 2 Pops, and 2 Dips',
             'price': '19.99',
@@ -151,6 +157,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '7',
             'name': 'Family Deal',
             'desc': 'Large 3 Topping Pizza with 1lb of Wings, 4 Pops, 2 Dips, Garlic Bread w/ Cheese, and Spaghetti w/ Meat Sauce',
             'price': '33.99',
@@ -168,6 +175,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '8',
             'name': 'Supreme Special',
             'desc': '3 Topping Pizza with 1lb of Wings, 4 Pops, 2 Dips, and Garlic Bread w/ Cheese',
             'price': '25.99',
@@ -190,6 +198,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '9',
             'name': 'Friendly Deal',
             'desc': '2 Topping Pizza with 2lbs of Wings, 4 Pops, 2 Dips, and Garlic Bread w/ Cheese',
             'price': '30.99',
@@ -216,6 +225,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '10',
             'name': 'X-Large Deal',
             'desc': '3 Topping X-Large Pizza, 3 Pops, and 2 Dips',
             'price': '15.99',
@@ -233,6 +243,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '11',
             'name': 'Pick-up Only Deal',
             'desc': 'X-Large Pepperoni Pizza',
             'price': '10.99',
@@ -250,6 +261,7 @@ deal_items = [
 		  	}
         },
         {
+            'id': '12',
             'name': 'Single Panzo Deal',
             'desc': '',
             'price': '9.99',

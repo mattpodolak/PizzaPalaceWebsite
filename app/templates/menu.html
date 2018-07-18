@@ -4,11 +4,11 @@
         {% for item in items %}            
         <div class="menu-items">
             <!--<img class="menu-img" src="{{url_for('static', filename='img/deals{{item.name}}.jpg')}}" alt="{{item.name}}"/>-->
-            <p class="menu-items-price">
-                
-            </p>
             <h2 class="menu-items-title">
-                ${{item.price}} - {{item.name}}
+                {{item.name}} - 
+            </h2>
+            <h2 class="menu-items-price">
+                ${{item.price}}
             </h2>
             <p class="menu-items-desc">
                 {{item.desc}}
