@@ -123,10 +123,11 @@ def add_address():
 
 @flapp.route('/customize/<category>/<id>', methods=['GET', 'POST'])
 def customize(category, id):
+    custom_item = util.find_item(category, id)
     form = CustomizeForm()
     if form.validate_on_submit():
         flash('Submit form')
     elif request.method == 'GET':
         flash('Load form')
     return render_template('customize.html', title='Customize Menu Item',
-                           form=form, item=util.find_item(category, id))
+                           form=form, item=custom_item)

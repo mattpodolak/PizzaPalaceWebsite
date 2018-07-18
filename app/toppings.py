@@ -1,3 +1,5 @@
+from app.menudata import menu_items
+
 # double check prices of toppings at different sizes
 toppings = {
     "Meat" : [
@@ -195,3 +197,10 @@ toppings = {
         }
     ]
 }
+
+Pops = ['Coke', 'Diet Coke', 'Coke Zero', 'Sprite', 'Nestea Iced Tea', "Barq's Root Beer", 'Canada Dry', 'C-Plus', 'Fresca', 'Brio', 'Water']
+Dips = ['Ranch', 'Creamy Garlic', 'Blue Cheese', 'Marinara', 'Cheddar Chipotle', 'Spicy Buffalo']
+Wings = []
+
+for wing in menu_items['wings']:
+    Wings.append(wing.name)

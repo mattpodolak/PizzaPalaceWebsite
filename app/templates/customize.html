@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Customize {{item.name}}</h1>
+    <h1>Customize: {{item.name}}</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>{{ form.submit() }}</p>

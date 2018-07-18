@@ -285,6 +285,117 @@ deal_items = [
         },
 ]
 
-menu_items = {'deals': deal_items}
+wing_items = [
+        {
+            'id': '13',
+            'name': 'BBQ Wings',
+            'desc': '',
+            'price': '9.99',
+            'pizzas': '0',
+			'size': '1lb',
+			'toppings': '0',
+			'default_toppings': 'null',
+			'addon':  [
+				{
+					'name': 'Upgrade to 2lbs',
+					'price': '9.00'
+				},
+				{
+					'name': 'Upgrade to 4lbs',
+					'price': '27.00'
+				}
+			],
+		  	'extras': {
+				'Wings': '0',
+				'Garlic bread with cheese': 'False',
+				'Pop': '0',
+				'Dip': '0',
+				'Pasta': 'False'
+		  	}
+        },
+        {
+            'id': '14',
+            'name': 'Honey Garlic Wings',
+            'desc': '',
+            'price': '9.99',
+            'pizzas': '0',
+			'size': '1lb',
+			'toppings': '0',
+			'default_toppings': 'null',
+			'addon':  [
+				{
+					'name': 'Upgrade to 2lbs',
+					'price': '9.00'
+				},
+				{
+					'name': 'Upgrade to 4lbs',
+					'price': '27.00'
+				}
+			],
+		  	'extras': {
+				'Wings': '0',
+				'Garlic bread with cheese': 'False',
+				'Pop': '0',
+				'Dip': '0',
+				'Pasta': 'False'
+		  	}
+        },
+        {
+            'id': '15',
+            'name': 'Medium Wings',
+            'desc': '',
+            'price': '9.99',
+            'pizzas': '0',
+			'size': '1lb',
+			'toppings': '0',
+			'default_toppings': 'null',
+			'addon':  [
+				{
+					'name': 'Upgrade to 2lbs',
+					'price': '9.00'
+				},
+				{
+					'name': 'Upgrade to 4lbs',
+					'price': '27.00'
+				}
+			],
+		  	'extras': {
+				'Wings': '0',
+				'Garlic bread with cheese': 'False',
+				'Pop': '0',
+				'Dip': '0',
+				'Pasta': 'False'
+		  	}
+        },
+        {
+            'id': '16',
+            'name': 'Hot Wings',
+            'desc': '',
+            'price': '9.99',
+            'pizzas': '0',
+			'size': '1lb',
+			'toppings': '0',
+			'default_toppings': 'null',
+			'addon':  [
+				{
+					'name': 'Upgrade to 2lbs',
+					'price': '9.00'
+				},
+				{
+					'name': 'Upgrade to 4lbs',
+					'price': '27.00'
+				}
+			],
+		  	'extras': {
+				'Wings': '0',
+				'Garlic bread with cheese': 'False',
+				'Pop': '0',
+				'Dip': '0',
+				'Pasta': 'False'
+		  	}
+        },
+]
+
+menu_items = {'deals': deal_items, 'wings': wing_items}
     
 
