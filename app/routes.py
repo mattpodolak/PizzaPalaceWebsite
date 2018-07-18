@@ -16,7 +16,7 @@ def index():
 def deals():
     #import data from a class containing all relational data
     deal_items = menu_items['deals']
-    return render_template('menu.html', title='Deals', items=deal_items)
+    return render_template('menu.html', title='Deals', items=deal_items, category='deals')
 
 @flapp.route('/sides')
 def sides():
@@ -122,13 +122,10 @@ def add_address():
 
 @flapp.route('/customize/<category>/<id>', methods=['GET', 'POST'])
 def customize(category, id):
-    form = CustomizeForm(current_user.username, current_user.email)
+    form = CustomizeForm()
     if form.validate_on_submit():
-
+        flash('Submit form')
     elif request.method == 'GET':
-        form.first_name.data = current_user.first_name
-        form.last_name.data = current_user.last_name
-        form.email.data = current_user.email
-        form.phone.data = current_user.phone
-    return render_template('edit_profile.html', title='Edit Profile',
+        flash('Load form')
+    return render_template('customize.html', title='Customize Menu Item',
                            form=form)

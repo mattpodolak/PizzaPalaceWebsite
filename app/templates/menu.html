@@ -3,16 +3,18 @@
 {% block content %} 
         {% for item in items %}            
         <div class="menu-items">
-            <!--<img class="menu-img" src="{{url_for('static', filename='img/deals{{item.name}}.jpg')}}" alt="{{item.name}}"/>-->
-            <h2 class="menu-items-title">
-                {{item.name}} - 
-            </h2>
-            <h2 class="menu-items-price">
-                ${{item.price}}
-            </h2>
-            <p class="menu-items-desc">
-                {{item.desc}}
-            </p>
+            <a href="{{ url_for('customize', category=category, id=item.id) }}">
+                <!--<img class="menu-img" src="{{url_for('static', filename='img/deals{{item.name}}.jpg')}}" alt="{{item.name}}"/>-->
+                <h2 class="menu-items-title">
+                    {{item.name}} - 
+                </h2>
+                <h2 class="menu-items-price">
+                    ${{item.price}}
+                </h2>
+                <p class="menu-items-desc">
+                    {{item.desc}}
+                </p>
+            </a>
             <!--INSERT BUTTON TO LOAD ORDER FORM PAGE HERE--> 
             <!--END OF ORDER FORM-->
         </div>

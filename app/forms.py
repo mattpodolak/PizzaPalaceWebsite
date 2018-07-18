@@ -62,5 +62,5 @@ class EditAddressForm(FlaskForm):
     postal_code = StringField('Postal Code', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-class ToppingForm(FlaskForm):
+class CustomizeForm(FlaskForm):
     submit = SubmitField('Add to Cart')
