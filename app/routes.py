@@ -1,5 +1,5 @@
 from app import flapp, url_for, request
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, EditAddressForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EditAddressForm, CustomizeForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user, login_required
@@ -119,3 +119,16 @@ def add_address():
         flash('Your changes have been saved.')
         return redirect(url_for('add_address'))
     return render_template('edit_address.html', title='Add an Address', form=form)
+
+@flapp.route('/customize/<category>/<id>', methods=['GET', 'POST'])
+def customize(category, id):
+    form = CustomizeForm(current_user.username, current_user.email)
+    if form.validate_on_submit():
+
+    elif request.method == 'GET':
+        form.first_name.data = current_user.first_name
+        form.last_name.data = current_user.last_name
+        form.email.data = current_user.email
+        form.phone.data = current_user.phone
+    return render_template('edit_profile.html', title='Edit Profile',
+                           form=form)
