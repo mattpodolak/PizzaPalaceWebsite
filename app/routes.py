@@ -1,5 +1,5 @@
 from app import flapp, url_for, request
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, EditAddressForm, CustomizeForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EditAddressForm, CustomizeForm, AddressesForm
 from flask import render_template, flash, redirect
 from app.menudata import menu_items
 from flask_login import current_user, login_user, logout_user, login_required
@@ -131,3 +131,10 @@ def customize(category, id):
         flash('Load form')
     return render_template('customize.html', title='Customize Menu Item',
                            form=form, item=custom_item)
+
+@flapp.route('/test', methods=['GET', 'POST'])
+def test():
+    user_addresses = [{"name": "First Address"},
+                    {"name": "Second Address"}]
+    form = AddressesForm(addresses=user_addresses)
+    return render_template("test.html", form=form)

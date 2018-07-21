@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.models import User
 
@@ -64,3 +64,11 @@ class EditAddressForm(FlaskForm):
 
 class CustomizeForm(FlaskForm):
     submit = SubmitField('Add to Cart')
+
+class AddressEntryForm(FlaskForm):
+    name = TextField()
+
+class AddressesForm(FlaskForm):
+    """A form for one or more addresses"""
+    addresses = FieldList(FormField(AddressEntryForm), min_entries=1)
+    submit = SubmitField('Save')

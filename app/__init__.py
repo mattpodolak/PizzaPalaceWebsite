@@ -15,6 +15,7 @@ login.login_view = 'login'
 
 from app import routes, models
 
+# email debugging
 # if not app.debug:
 #     if app.config['MAIL_SERVER']:
 #         auth = None
