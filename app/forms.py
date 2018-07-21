@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList, SelectField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList, SelectField, SelectMultipleField
 from wtforms.validators import DataRequired, Email, EqualTo
+from wtforms.widgets import CheckboxInput, ListWidget
 from app.models import User
 from app.toppings import WingsArray, PopsArray, DipsArray, ToppingsArray
 
@@ -69,6 +70,10 @@ class PopForm(FlaskForm):
 class DipForm(FlaskForm):
     dip = SelectField(choices=DipsArray, validators=[DataRequired()])
 
+class MultiCheckboxField(SelectMultipleField):
+    widget = ListWidget(prefix_label = False)
+    option_widget = CheckboxInput()
+
 class ToppingForm(FlaskForm):
     toppings  = SelectField(choices=ToppingsArray, validators=[DataRequired()])
 
@@ -81,7 +86,7 @@ class CustomizeForm(FlaskForm):
 
 class AddressEntryForm(FlaskForm):
     #name = SelectField(choices=[('1', 'Potato'), ('2', 'Onion'), ('3', 'Tomato')])
-    name = SelectField(choices=WingsArray)
+    name  = MultiCheckboxField('Test', choices=WingsArray, validators=[DataRequired()])
 
 class AddressesForm(FlaskForm):
     """A form for one or more addresses"""
