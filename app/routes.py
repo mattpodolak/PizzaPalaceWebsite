@@ -134,7 +134,7 @@ def customize(category, id):
 
 @flapp.route('/test', methods=['GET', 'POST'])
 def test():
-    user_addresses = [{"name": "First Address"},
-                    {"name": "Second Address"}]
+    user_addresses = [{"name": 'Name 1'},
+                    {"name": 'Name 2'}]
     form = AddressesForm(addresses=user_addresses)
     return render_template("test.html", form=form)

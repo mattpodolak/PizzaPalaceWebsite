@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.models import User
 
@@ -62,11 +62,21 @@ class EditAddressForm(FlaskForm):
     postal_code = StringField('Postal Code', validators=[DataRequired()])
     submit = SubmitField('Save')
 
+class PopForm(FlaskForm):
+    pop = StringField('Pick a Pop')
+
+class DipForm(FlaskForm):
+    dip = StringField('Pick a Dip')
+
+class PizzaForm(FlaskForm):
+    pizza = StringField('Pick Pizza Toppings')
+
 class CustomizeForm(FlaskForm):
+    notes = StringField('Special Notes')
     submit = SubmitField('Add to Cart')
 
 class AddressEntryForm(FlaskForm):
-    name = TextField()
+    name = SelectField(choices=[('1', 'Potato'), ('2', 'Onion'), ('3', 'Tomato')])
 
 class AddressesForm(FlaskForm):
     """A form for one or more addresses"""
