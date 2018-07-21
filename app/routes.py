@@ -124,7 +124,7 @@ def add_address():
 @flapp.route('/customize/<category>/<id>', methods=['GET', 'POST'])
 def customize(category, id):
     custom_item = util.find_item(category, id)
-    form = CustomizeForm()
+    form = CustomizeForm(pizzas=pizzaList, wings=wingsList, pops=popsList, dips=dipsList, defaultToppings=default_toppings)
     if form.validate_on_submit():
         flash('Submit form')
     elif request.method == 'GET':

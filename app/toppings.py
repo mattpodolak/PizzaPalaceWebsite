@@ -201,18 +201,38 @@ toppings = {
 Pops = ['Coke', 'Diet Coke', 'Coke Zero', 'Sprite', 'Nestea Iced Tea', "Barq's Root Beer", 'Canada Dry', 'C-Plus', 'Fresca', 'Brio', 'Water']
 Dips = ['Ranch', 'Creamy Garlic', 'Blue Cheese', 'Marinara', 'Cheddar Chipotle', 'Spicy Buffalo']
 Wings = []
+
+# arrays for customization form
 PopsArray = []
 DipsArray = []
 WingsArray = []
 ToppingsArray = []
+MeatToppings = []
+CheeseToppings = []
+VegToppings = []
+FreeToppings = []
 
-ct = 1
 for wing in menu_items['wings']:
     Wings.append(wing['name'])
 
     #format for selectfields
-    WingsArray.append((ct, wing['name']))
-    ct +=1
+    WingsArray.append((wing['name'], wing['name']))
 
-#format pop, dip, and toppings for select fields
-#for pop in Pops:
+#format pop, dip, and toppings for select fields in customize form
+for pop in Pops:
+    PopsArray.append((pop, pop))
+
+for dip in Dips:
+    DipsArray.append((dip, dip))
+
+for topping in toppings['Meat']:
+    MeatToppings.append((topping['name'], topping['name']))
+
+for topping in toppings['Cheese']:
+    CheeseToppings.append((topping['name'], topping['name']))
+
+for topping in toppings['Vegetable']:
+    VegToppings.append((topping['name'], topping['name']))
+
+for topping in toppings['Free_Toppings']:
+    FreeToppings.append((topping['name'], topping['name']))

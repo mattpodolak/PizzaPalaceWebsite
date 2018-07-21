@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextF
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms.widgets import CheckboxInput, ListWidget
 from app.models import User
-from app.toppings import WingsArray, PopsArray, DipsArray, ToppingsArray
+from app.toppings import WingsArray, PopsArray, DipsArray, MeatToppings, VegToppings, CheeseToppings, FreeToppings
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -75,7 +75,13 @@ class MultiCheckboxField(SelectMultipleField):
     option_widget = CheckboxInput()
 
 class ToppingForm(FlaskForm):
-    toppings  = SelectField(choices=ToppingsArray, validators=[DataRequired()])
+    name  = SelectMultipleField('Test', choices=WingsArray, validators=[DataRequired()])
+
+class PizzaForm(FlaskForm):
+    free = MultiCheckboxField('Free Toppings', choices=FreeToppings)
+    cheese = MultiCheckboxField('Cheese Toppings', choices=CheeseToppings)
+    meat = MultiCheckboxField('Meat Toppings', choices=MeatToppings)
+    veg = MultiCheckboxField('Vegetable Toppings', choices=VegToppings)
 
 class WingForm(FlaskForm):
     wings  = SelectField(choices=WingsArray, validators=[DataRequired()])
@@ -86,9 +92,9 @@ class CustomizeForm(FlaskForm):
 
 class AddressEntryForm(FlaskForm):
     #name = SelectField(choices=[('1', 'Potato'), ('2', 'Onion'), ('3', 'Tomato')])
-    name  = MultiCheckboxField('Test', choices=WingsArray, validators=[DataRequired()])
+    name  = FieldList(FormField(PizzaForm), min_entries=0)
 
 class AddressesForm(FlaskForm):
     """A form for one or more addresses"""
-    addresses = FieldList(FormField(AddressEntryForm), min_entries=1)
+    addresses = FieldList(FormField(PizzaForm), min_entries=1)
     submit = SubmitField('Save')
