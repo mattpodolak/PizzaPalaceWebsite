@@ -3,9 +3,10 @@
 {% block content %}
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        {% for l in form.locations %}
-            {{ l.form.city }}
+        {% for address in form.addresses %}
+            {{ address }}
         {% endfor %}
+        
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}
