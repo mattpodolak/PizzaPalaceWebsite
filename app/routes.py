@@ -123,8 +123,9 @@ def add_address():
 
 @flapp.route('/customize/<category>/<id>', methods=['GET', 'POST'])
 def customize(category, id):
-    custom_item = util.find_item(category, id)
-    form = CustomizeForm(pizzas=pizzaList, wings=wingsList, pops=popsList, dips=dipsList, defaultToppings=default_toppings)
+    custom_item, pizza_list, default_toppings, wings_list, pops_list, dips_list = util.find_item(category, id)
+    addons = custom_item['addon'] #might need to remove value from this
+    form = CustomizeForm(pizzas=pizza_list, wings=wings_list, pops=pops_list, dips=dips_list, defaultToppings=default_toppings)
     if form.validate_on_submit():
         flash('Submit form')
     elif request.method == 'GET':
