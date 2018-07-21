@@ -64,12 +64,6 @@ class EditAddressForm(FlaskForm):
     postal_code = StringField('Postal Code', validators=[DataRequired()])
     submit = SubmitField('Save')
 
-class PopForm(FlaskForm):
-    pop = SelectField(choices=PopsArray, validators=[DataRequired()])
-
-class DipForm(FlaskForm):
-    dip = SelectField(choices=DipsArray, validators=[DataRequired()])
-
 class MultiCheckboxField(SelectMultipleField):
     widget = ListWidget(prefix_label = False)
     option_widget = CheckboxInput()
@@ -80,8 +74,14 @@ class PizzaForm(FlaskForm):
     meat = MultiCheckboxField('Meat Toppings', choices=MeatToppings)
     veg = MultiCheckboxField('Vegetable Toppings', choices=VegToppings)
 
+class PopForm(FlaskForm):
+    pop = SelectField('', choices=PopsArray, validators=[DataRequired()])
+
+class DipForm(FlaskForm):
+    dip = SelectField('', choices=DipsArray, validators=[DataRequired()])
+
 class WingForm(FlaskForm):
-    wings  = SelectField(choices=WingsArray, validators=[DataRequired()])
+    wings  = SelectField('', choices=WingsArray, validators=[DataRequired()])
 
 class CustomizeForm(FlaskForm):
     notes = StringField('Special Notes')

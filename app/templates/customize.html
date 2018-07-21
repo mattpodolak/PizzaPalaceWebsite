@@ -2,17 +2,33 @@
 
 {% block content %}
     <h1>Customize: {{item.name}}</h1>
+    <h3>{{item.desc}}</h3>
     <form action="" method="post">
         {{ form.hidden_tag() }}
+        {% if pizza in form.pizzas %}
+            <h2>Pick Toppings</h2>
+        {% endif %}
         {% for pizza in form.pizzas %}
             {{ pizza }}
         {% endfor %}
+
+        {% if pop in form.pops %}
+            <h2>Pick Pop</h2>
+        {% endif %}
         {% for pop in form.pops %}
             {{ pop }}
         {% endfor %}
+
+        {% if dip in form.dips %}
+            <h2>Pick Dip</h2>
+        {% endif %}
         {% for dip in form.dips %}
             {{ dip }}
         {% endfor %}
+
+        {% if wing in form.wings %}
+            <h2>Pick Wings Flavour</h2>
+        {% endif %}
         {% for wing in form.wings %}
             {{ wings }}
         {% endfor %} 
