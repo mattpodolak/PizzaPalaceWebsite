@@ -74,9 +74,6 @@ class MultiCheckboxField(SelectMultipleField):
     widget = ListWidget(prefix_label = False)
     option_widget = CheckboxInput()
 
-class ToppingForm(FlaskForm):
-    name  = SelectMultipleField('Test', choices=WingsArray, validators=[DataRequired()])
-
 class PizzaForm(FlaskForm):
     free = MultiCheckboxField('Free Toppings', choices=FreeToppings)
     cheese = MultiCheckboxField('Cheese Toppings', choices=CheeseToppings)
@@ -88,6 +85,10 @@ class WingForm(FlaskForm):
 
 class CustomizeForm(FlaskForm):
     notes = StringField('Special Notes')
+    pizzas = FieldList(FormField(PizzaForm), min_entries=1)
+    wings = FieldList(FormField(WingForm), min_entries=1)
+    pops = FieldList(FormField(PopForm), min_entries=1)
+    dips = FieldList(FormField(DipForm), min_entries=1)
     submit = SubmitField('Add to Cart')
 
 class AddressEntryForm(FlaskForm):
