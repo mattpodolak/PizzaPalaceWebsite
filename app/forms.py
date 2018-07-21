@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.models import User
+from app.toppings import WingsArray
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -76,7 +77,8 @@ class CustomizeForm(FlaskForm):
     submit = SubmitField('Add to Cart')
 
 class AddressEntryForm(FlaskForm):
-    name = SelectField(choices=[('1', 'Potato'), ('2', 'Onion'), ('3', 'Tomato')])
+    #name = SelectField(choices=[('1', 'Potato'), ('2', 'Onion'), ('3', 'Tomato')])
+    name = SelectField(choices=WingsArray)
 
 class AddressesForm(FlaskForm):
     """A form for one or more addresses"""

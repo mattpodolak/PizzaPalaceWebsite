@@ -201,6 +201,18 @@ toppings = {
 Pops = ['Coke', 'Diet Coke', 'Coke Zero', 'Sprite', 'Nestea Iced Tea', "Barq's Root Beer", 'Canada Dry', 'C-Plus', 'Fresca', 'Brio', 'Water']
 Dips = ['Ranch', 'Creamy Garlic', 'Blue Cheese', 'Marinara', 'Cheddar Chipotle', 'Spicy Buffalo']
 Wings = []
+PopsArray = []
+DipsArray = []
+WingsArray = []
+ToppingsArray = []
 
+ct = 1
 for wing in menu_items['wings']:
-    Wings.append(wing.name)
+    Wings.append(wing['name'])
+
+    #format for selectfields
+    WingsArray.append((ct, wing['name']))
+    ct +=1
+
+#format pop, dip, and toppings for select fields
+#for pop in Pops:
