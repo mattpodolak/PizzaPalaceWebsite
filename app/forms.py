@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextField, FormField, FieldList, SelectField
 from wtforms.validators import DataRequired, Email, EqualTo
 from app.models import User
-from app.toppings import WingsArray
+from app.toppings import WingsArray, PopsArray, DipsArray, ToppingsArray
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -64,13 +64,16 @@ class EditAddressForm(FlaskForm):
     submit = SubmitField('Save')
 
 class PopForm(FlaskForm):
-    pop = StringField('Pick a Pop')
+    pop = SelectField(choices=PopsArray, validators=[DataRequired()])
 
 class DipForm(FlaskForm):
-    dip = StringField('Pick a Dip')
+    dip = SelectField(choices=DipsArray, validators=[DataRequired()])
 
-class PizzaForm(FlaskForm):
-    pizza = StringField('Pick Pizza Toppings')
+class ToppingForm(FlaskForm):
+    toppings  = SelectField(choices=ToppingsArray, validators=[DataRequired()])
+
+class WingForm(FlaskForm):
+    wings  = SelectField(choices=WingsArray, validators=[DataRequired()])
 
 class CustomizeForm(FlaskForm):
     notes = StringField('Special Notes')
